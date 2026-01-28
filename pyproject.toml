@@ -1,9 +1,24 @@
-﻿[project]
+[tool.poetry]
 name = "telegram-publisher"
 version = "0.1.0"
-requires-python = ">=3.11"
-dependencies = ["aiogram>=3.0.0"]
+description = "Aiogram-based publisher helper: post+card in forum topics, update, move, publish to channel."
+authors = ["God-Get <you@example.com>"]
+readme = "README.md"
+packages = [{ include = "telegram_publisher" }]
 
-[build-system]
-requires = ["setuptools>=68"]
-build-backend = "setuptools.build_meta"
+[tool.poetry.dependencies]
+python = ">=3.11,<4.0"
+aiogram = "^3.7"
+pydantic = "^2.7"
+
+[tool.poetry.group.dev.dependencies]
+pytest = "^8.0"
+pytest-asyncio = "^0.23"
+ruff = "^0.5"
+mypy = "^1.10"
+
+[tool.ruff]
+line-length = 100
+
+[tool.pytest.ini_options]
+asyncio_mode = "auto"
